@@ -5,13 +5,11 @@ public class scrollN1 extends World
     GreenfootImage background;
     GreenfootSound bg = new GreenfootSound("gameplayB.wav");
     private int backgroundX;
-    private int timer = 10;
+    private int timer = 55*60;
     Contador cont = new Contador();
     public scrollN1()
     {    
         super(1020, 496, 1); 
-        //started();
-        //verificaN1();
         background = new GreenfootImage("fondoG.png");
         this.getBackground().drawImage(background, 0, 0);
         prepare();
@@ -30,7 +28,13 @@ public class scrollN1 extends World
     }
     public void act()
     {
+        started();
         this.drawBackground();
+        if(Greenfoot.isKeyDown("o"))
+        {
+            Greenfoot.setWorld(new BossN1());
+            stopped();
+        }
     }
     public void changeBackgroundX(int changeX)
     {
@@ -40,10 +44,7 @@ public class scrollN1 extends World
     {
         this.getBackground().drawImage(background, backgroundX, 0);
     }
-    /*public void verificaN1()
-    {
-        
-    }*/
+    
     private void prepare()
     {
         Ground ground = new Ground();
@@ -107,5 +108,8 @@ public class scrollN1 extends World
         addObject(contCoin,43,35);
         ContadorV contadorV = new ContadorV();
         addObject(contadorV,190,30);
+        coin2.setLocation(145,259);
+        monedaM monedaM = new monedaM();
+        addObject(monedaM,933,146);
     }
 }

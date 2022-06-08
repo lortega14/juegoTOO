@@ -17,10 +17,22 @@ public class pre4 extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 400, 1);  
+        prepare();
     }
+
     public void act()
     {
         if(Greenfoot.isKeyDown("SPACE")||Greenfoot.isKeyDown("ENTER"))
             Greenfoot.setWorld(new scrollN1());
+    }
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        TextoEnter textoEnter = new TextoEnter();
+        addObject(textoEnter,726,42);
+        textoEnter.setLocation(718,39);
     }
 }

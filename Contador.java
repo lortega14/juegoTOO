@@ -10,6 +10,7 @@ import greenfoot.Color;
 public class Contador extends Actor
 {
     int cont = 0;
+    int aux = 0;
     /**
      * Act - do whatever the Contador wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -21,5 +22,10 @@ public class Contador extends Actor
     public void addContar()
     {
         cont++;
+    }
+    public int recupera()
+    {
+        cont = aux;
+        return aux;
     }
 }

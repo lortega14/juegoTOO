@@ -29,6 +29,7 @@ public class JabaliEmbe extends Actor
                World MyWorld;
                 MyWorld = getWorld();
                 MyWorld.removeObject(JabaliEmbe);
+                Greenfoot.setWorld(new perdiste());
             }
         if(getX() == 0)
         {

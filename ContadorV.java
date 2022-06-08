@@ -9,7 +9,7 @@ import greenfoot.Color;
  */
 public class ContadorV extends Actor
 {
-    int cont = 100;
+    int cont = 1;
     /**
      * Act - do whatever the ContadorV wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

@@ -29,8 +29,33 @@ public class Caballero extends Actor
         golpea();
         checkFalling();
         collect();
-        
         animationCounter ++;
+        monedota();
+        
+        jabali();
+        jabaliE();
+    }
+    public void jabali()
+    {
+        Actor Caballero;
+        Caballero = getOneObjectAtOffset(0,0,Jabali.class);
+        if(Caballero != null && Greenfoot.isKeyDown("P"))
+        {
+               World MyWorld;
+                MyWorld = getWorld();
+                MyWorld.removeObject(Caballero);
+        }
+    }
+    public void jabaliE()
+    {
+        Actor Caballero;
+        Caballero = getOneObjectAtOffset(0,0,JabaliEmbe.class);
+        if(Caballero != null && Greenfoot.isKeyDown("P"))
+        {
+               World MyWorld;
+                MyWorld = getWorld();
+                MyWorld.removeObject(Caballero);
+        }
     }
     public void animacion()
     {
@@ -150,6 +175,19 @@ public class Caballero extends Actor
                 scrollN1 mundo = (scrollN1)world;
                 Contador cont = mundo.getContador();
                 cont.addContar();
+            }
+        }
+    }
+    public void monedota()
+    {
+        Actor cC = getOneIntersectingObject(monedaM.class);
+        {
+            if(cC!=null)
+            {
+                World world;
+                world = getWorld();
+                getWorld().removeObject(cC);
+                Greenfoot.setWorld(new BossN1());
             }
         }
     }
